@@ -4,4 +4,5 @@ package org.example;
 public interface StringOperation {
 
     String manipulate (String input);
+
 }

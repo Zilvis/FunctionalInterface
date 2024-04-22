@@ -165,10 +165,23 @@ public class Main {
 
         //////////////////////////////////////////////////////
         System.out.println("12 uzduotis");
+        List<StringOperation> list = new ArrayList<>(){{
+            add(String::toUpperCase);
+            add(String::toLowerCase);
+            add(tekstas -> new StringBuilder(tekstas).reverse().toString());
+        }};
+
+        performActions("Kazkas", list);
 
 
         //////////////////////////////////////////////////////
 
+    }
+
+    static void performActions(String text, List<StringOperation> list){
+        for (StringOperation stringOperation : list) {
+            System.out.println(stringOperation.manipulate(text));
+        }
     }
 
     static double feetCon(double pedos) {
